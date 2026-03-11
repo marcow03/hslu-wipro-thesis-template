@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "myriad-dreamin.tinymist",
+        "surv.typst-math",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-swiss-german",
+        "tamasfe.even-better-toml",
+        "yzhang.markdown-all-in-one",
+        "mushan.vscode-paste-image",
+        "gruntfuggly.todo-tree",
+        "kirozen.wordcounter",
+        "nefrob.vscode-just-syntax",
+        "vscode-icons-team.vscode-icons"
+    ]
+}
