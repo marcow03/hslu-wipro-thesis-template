@@ -15,7 +15,7 @@
   client: "Client/Company Name",
   public: false,
   secret: true,
-  thesis-type: "WIRTSCHAFTSPROJEKT",
+  thesis-type: "Wirtschaftsprojekt",
   bibliography: include "outlines/bibliography.typ",
   abbreviations: include "outlines/abbreviations.typ",
   figure-outline: include "outlines/figure-outline.typ",

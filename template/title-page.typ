@@ -59,7 +59,7 @@
 
     #v(2fr)
 
-    #text(size: 16pt)[#thesis-type]
+    #text(size: 16pt)[#upper(thesis-type)]
 
     #text(
       size: 11pt,
@@ -87,7 +87,7 @@
   if scanned-signature-page != none {
     scanned-signature-page
   } else {
-    text()[= Wirtschaftsprojekt an der Hochschule Luzern - Informatik]
+    text()[= #thesis-type an der Hochschule Luzern - Informatik]
     v(1em)
 
     document-property(title: "Titel", info: title)
