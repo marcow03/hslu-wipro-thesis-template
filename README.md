@@ -1,4 +1,4 @@
-# wipro-thesis-template
+# hslu-thesis-template
 
 This is a template for a thesis (WIPRO/BAA) at HSLU or other institutions.
 
