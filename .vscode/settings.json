@@ -1,16 +1,10 @@
 {
-    "pasteImage.encodePath": "none",
-    "pasteImage.basePath": "${currentFileDir}",
-    "pasteImage.forceUnixStyleSeparator": false,
-    "pasteImage.path": "${projectRoot}/documentation/images",
-    "pasteImage.prefix": "#align(center)[\n\t#figure(\n\t\tkind: image,\n\t\tcaption: [Example Image],\n\t\timage(\"",
-    "pasteImage.showFilePathConfirmInputBox": true,
-    "pasteImage.suffix": "\", width: 50%),\n\t)\n]",
     "cSpell.language": "de-CH,en",
     "cSpell.words": [
         "HSLU",
         "pagebreak",
-        "WIPRO"
+        "WIPRO",
+        "BAA"
     ],
     "tinymist.formatterIndentSize": 2,
     "tinymist.formatterProseWrap": true,
