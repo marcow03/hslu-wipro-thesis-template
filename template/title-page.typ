@@ -17,7 +17,6 @@
   #info
 ]
 
-
 #let signature() = {
   grid(
     columns: (auto, 1fr),
@@ -26,7 +25,6 @@
     [Ort / Datum, Unterschrift], line(length: 100%, stroke: 1pt + gray),
   )
 }
-
 
 #let title-page(
   logo: image,
@@ -40,6 +38,7 @@
   client: "",
   public: false,
   secret: false,
+  thesis-type: "",
   scanned-signature-page: none,
 ) = {
   logo
@@ -60,9 +59,11 @@
 
     #v(2fr)
 
-    #text(size: 16pt)[WIRTSCHAFTSPROJEKT]
+    #text(size: 16pt)[#thesis-type]
 
-    #text(size: 11pt)[vorgelegt am Departement Informatik der Hochschule Luzern (Schweiz)]
+    #text(
+      size: 11pt,
+    )[vorgelegt am Departement Informatik der Hochschule Luzern (Schweiz)]
 
     #v(2fr)
 
@@ -82,7 +83,6 @@
   ]
 
   pagebreak()
-
 
   if scanned-signature-page != none {
     scanned-signature-page
@@ -140,5 +140,4 @@
       für die Ausbildung an der Hochschule Luzern, FH Zentralschweiz
     ]
   }
-  pagebreak()
 }

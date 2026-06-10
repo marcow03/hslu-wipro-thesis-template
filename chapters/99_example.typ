@@ -1,18 +1,25 @@
-#import "../template/utils.typ": code, qr-code-link
+#import "../template/utils.typ": flex-caption, qr-code-link
 
 = Heading Example
+
 #lorem(50)
 
 == Subheading Example
+
 #lorem(50)
 
 === Subsubheading Example
+
 #lorem(50)
 
-#pagebreak()
+==== Subsubsubheading Example
+
+#lorem(50)
 
 = Table Example
+
 Here is a simple table:
+
 #figure(
   caption: [Example Table],
   kind: table,
@@ -28,29 +35,38 @@ Here is a simple table:
 )
 
 = Image Example
+
 Here is an Example on how to include an image which is also listed in the image outline.
 
 #align(center)[
   #figure(
     kind: image,
-    caption: [Example Image],
+    caption: flex-caption(
+      [Example Image],
+      [This image is an example for displaying images],
+    ),
     image("../assets/hslu-logo.svg", width: 50%),
   )
 ]
 
 = Source Example
+
 This is based on @someExampleSource. Sources will automatically appear if they are cited. Add them to
 `bibliography.yaml`
 
 = Code Example
-Here is a code block:
-// this needs to be imported first
-// then you can use it like this:
-#code(lang: "sh")[
-  sudo rm -rf / --no-preserve-root
-]
+
+See @fig-code-rm for details. This is a code block:
+
+#figure(
+  caption: [This is some code],
+  ```sh
+    sudo rm -rf / --no-preserve-root
+  ```,
+) <fig-code-rm>
 
 = QR Code Link Example
+
 #qr-code-link(
   "https://www.youtube.com/watch?v=xvFZjo5PgG0",
 )[

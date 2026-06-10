@@ -1,5 +1,14 @@
 #import "@preview/rustycure:0.2.0": qr-code
 
+#let in-outline = state("in-outline", false)
+#let flex-caption(short, long) = {
+  context if in-outline.get() {
+    short
+  } else {
+    long
+  }
+}
+
 #let to-string(it) = {
   if type(it) == str {
     it
@@ -16,7 +25,6 @@
   }
 }
 
-// Function for formatted code blocks
 #let code(lang: "sh", text) = {
   block(
     fill: luma(240),

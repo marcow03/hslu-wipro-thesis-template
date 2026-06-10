@@ -1,15 +1,8 @@
-#import "template/basic-wipro.typ": *
+#import "template/basic-thesis.typ": *
 
-#let abstract = [
-  = Abstract
-  Here you write the Abstract
-]
-
-#set text(lang: "de")
-
-#show: doc => basic-wipro(
+#show: doc => basic-thesis(
   logo: image("assets/hslu-logo.svg", width: 30%),
-  title: "Titel der WIPRO",
+  title: "Titel der Arbeit",
   students: (
     "Student 1",
     "Student 2",
@@ -22,15 +15,15 @@
   client: "Client/Company Name",
   public: false,
   secret: true,
-  abstract,
-  doc,
+  thesis-type: "WIRTSCHAFTSPROJEKT",
   bibliography: include "outlines/bibliography.typ",
   abbreviations: include "outlines/abbreviations.typ",
   figure-outline: include "outlines/figure-outline.typ",
-  table-outline: include "outlines/tables.typ",
+  table-outline: include "outlines/table-outline.typ",
+  code-outline: include "outlines/code-outline.typ",
+  abstract: include "chapters/00_abstract.typ",
+  doc,
 )
-
-#pagebreak()
 
 // TODO: Remove example chapter before final submission
 #include "chapters/99_example.typ"
@@ -41,5 +34,6 @@
 #include "chapters/04_methoden.typ"
 #include "chapters/05_realisierung.typ"
 #include "chapters/06_validation-und-evaluation.typ"
-#include "chapters/07_ausblick.typ"
-#include "chapters/08_anhang.typ"
+#include "chapters/07_diskussion.typ"
+#include "chapters/08_ausblick.typ"
+#include "chapters/09_anhang.typ"

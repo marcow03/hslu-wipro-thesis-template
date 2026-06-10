@@ -1,4 +1,4 @@
-= Anhänge
+= Anhang
 
 // Die signierte Aufgabenstellung ist im Anhang zu integrieren. Weiter enthält der Anhang ergänzende
 // Materialien, die den Haupttext unterstützen, aber für dessen Lesefluss zu detailliert wären. Dazu zählen
