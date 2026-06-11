@@ -1,5 +1,6 @@
 #import "title-page.typ": title-page
 #import "utils.typ": in-outline
+#import "languages.typ": t
 
 #let basic-thesis(
   logo: image,
@@ -21,9 +22,11 @@
   table-outline: "",
   code-outline: "",
   abstract: "",
+  gratitude: "",
+  language: "de",
   doc,
 ) = {
-  set text(font: ("Times New Roman", "Libertinus Serif"), lang: "de")
+  set text(font: ("Times New Roman", "Libertinus Serif"), lang: language)
   set heading(numbering: none, outlined: false)
   show heading: set block(above: 2em, below: 1em)
 
@@ -41,6 +44,8 @@
     secret: secret,
     thesis-type: thesis-type,
     scanned-signature-page: scanned-signature-page,
+    language: language,
+    gratitude: gratitude,
   )
 
   counter(page).update(1)
@@ -69,7 +74,7 @@
       #align(
         right + horizon,
         counter(page).display(
-          "1 von 1",
+          t(language: language, key: "page-number-format"),
           both: true,
         ),
       )
@@ -79,26 +84,31 @@
   abstract
 
   pagebreak()
-  outline(title: "Inhaltsverzeichnis", depth: 3)
+  outline(title: t(language: language, key: "table-of-contents"), depth: 3)
 
   if abbreviations != "" {
     pagebreak()
+    heading(t(language: language, key: "abbreviations"))
     abbreviations
   }
   if bibliography != "" {
     pagebreak()
+    heading(t(language: language, key: "bibliography"))
     bibliography
   }
   if figure-outline != "" {
     pagebreak()
+    heading(t(language: language, key: "figures"))
     figure-outline
   }
   if table-outline != "" {
     pagebreak()
+    heading(t(language: language, key: "tables"))
     table-outline
   }
   if code-outline != "" {
     pagebreak()
+    heading(t(language: language, key: "code"))
     code-outline
   }
 

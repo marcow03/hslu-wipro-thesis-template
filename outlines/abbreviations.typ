@@ -1,5 +1,3 @@
-= Abkürzungsverzeichnis
-
 #table(
   columns: (auto, auto),
   inset: 10pt,

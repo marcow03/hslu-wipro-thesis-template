@@ -1,3 +1,5 @@
+#import "languages.typ": t
+
 #let document-property(title: "", info: "") = {
   [/ #title\:: #info]
   v(.25em)
@@ -17,12 +19,12 @@
   #info
 ]
 
-#let signature() = {
+#let signature(language: "de") = {
   grid(
     columns: (auto, 1fr),
     gutter: 0.75em,
     align: bottom,
-    [Ort / Datum, Unterschrift], line(length: 100%, stroke: 1pt + gray),
+    t(language: language, key: "place-date-signature"), line(length: 100%, stroke: 1pt + gray),
   )
 }
 
@@ -40,6 +42,8 @@
   secret: false,
   thesis-type: "",
   scanned-signature-page: none,
+  language: "de",
+  gratitude: "",
 ) = {
   logo
 
@@ -48,9 +52,9 @@
     #v(1fr)
 
     #text(size: 14pt)[
-      Informatik
+      #t(language: language, key: "department")
       #linebreak()
-      Hochschule Luzern (Schweiz)
+      #t(language: language, key: "institution")
     ]
 
     #v(1.5fr)
@@ -63,21 +67,25 @@
 
     #text(
       size: 11pt,
-    )[vorgelegt am Departement Informatik der Hochschule Luzern (Schweiz)]
+    )[#t(language: language, key: "submitted")]
 
     #v(2fr)
 
-    #text(size: 11pt)[von]
+    #text(size: 11pt)[#t(language: language, key: "by")]
 
     #text(size: 15pt)[
-      #students.map(student => text(weight: "bold")[#student]).join(" und ")
+      #(
+        students
+          .map(student => text(weight: "bold")[#student])
+          .join(" " + t(language: language, key: "name-combine") + " ")
+      )
     ]
 
     #v(1fr)
 
-    #text(size: 11pt)[von]
+    #text(size: 11pt)[#t(language: language, key: "from")]
 
-    #text(size: 15pt)[Luzern (Schweiz)]
+    #text(size: 15pt)[#t(language: language, key: "place")]
 
     #v(2fr)
   ]
@@ -87,57 +95,58 @@
   if scanned-signature-page != none {
     scanned-signature-page
   } else {
-    text()[= #thesis-type an der Hochschule Luzern - Informatik]
+    text()[= #thesis-type #t(language: language, key: "submitted")]
     v(1em)
 
-    document-property(title: "Titel", info: title)
+    document-property(title: t(language: language, key: "title"), info: title)
 
     for student in students [
-      #document-property(title: "Student", info: student)
+      #document-property(title: t(language: language, key: "student"), info: student)
     ]
 
-    document-property(title: "Studiengang", info: study-program)
+    document-property(title: t(language: language, key: "program"), info: study-program)
 
-    document-property(title: "Jahr", info: year)
-    document-property(title: "Betreuungsperson", info: supervisor)
-    document-property(title: "Expertenperson", info: expert)
-    document-property(title: "Auftraggeberin / Auftraggeber", info: client)
+    document-property(title: t(language: language, key: "year"), info: year)
+    document-property(title: t(language: language, key: "supervisor"), info: supervisor)
+    document-property(title: t(language: language, key: "expert"), info: expert)
+    document-property(title: t(language: language, key: "client"), info: client)
 
     v(.5em)
 
     text()[
 
-      *Codierung / Klassifizierung der Arbeit:*
+      *#t(language: language, key: "classification")*
     ]
     linebreak()
-    checkbox(info: "Öffentlich (Normalfall) ", checked: public)
+    checkbox(info: t(language: language, key: "public"), checked: public)
     linebreak()
-    checkbox(info: "Vertraulich ", checked: secret)
+    checkbox(info: t(language: language, key: "confidential"), checked: secret)
 
     v(2em)
 
     text()[
 
-      *Eidesstattliche Erklärung*
+      *#t(language: language, key: "declaration")*
 
-      Ich erkläre hiermit, dass ich/wir die vorliegende Arbeit selbständig und ohne unerlaubte fremde Hilfe angefertigt
-      habe/n. Alle verwendeten Quellen, Literatur und Hilfsmittel (insbesondere künstliche Intelligenz oder sonstige
-      verwendete Instrumente) wurden urheberrechts- und datenschutzkonform verwendet und wörtlich oder inhaltlich
-      entnommene Stellen als solche kenntlich gemacht. Das Ver-traulichkeitsinteresse des Auftraggebers wurde gewahrt
-      und die Urheberrechtsbestimmungen der Hochschule Luzern respektiert.
+      #t(language: language, key: "declaration-text")
     ]
 
-    signature()
-    signature()
+    for _ in students [
+      #signature(language: language)
+    ]
 
-    v(1fr)
+    if gratitude != "" {
+      pagebreak()
 
-    text(style: "italic")[
-      Geistiges Eigentum gemäss der
-      #link("https://srl.lu.ch/app/de/texts_of_law/521/versions/3884")[
-        #underline()[Studienordnung]
+      gratitude
+
+      align(bottom)[
+        _#t(language: language, key: "intellectual-property")_
       ]
-      für die Ausbildung an der Hochschule Luzern, FH Zentralschweiz
-    ]
+    } else {
+      align(bottom)[
+        _#t(language: language, key: "intellectual-property")_
+      ]
+    }
   }
 }

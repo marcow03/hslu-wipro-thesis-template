@@ -1,7 +1,7 @@
 #import "template/basic-thesis.typ": *
 
-#show: doc => basic-thesis(
-  logo: image("assets/hslu-logo.svg", width: 30%),
+#show: basic-thesis.with(
+  logo: image("assets/images/hslu-logo.svg", width: 30%),
   title: "Titel der Arbeit",
   students: (
     "Student 1",
@@ -15,6 +15,7 @@
   client: "Client/Company Name",
   public: false,
   secret: true,
+  language: "de",
   thesis-type: "Wirtschaftsprojekt",
   bibliography: include "outlines/bibliography.typ",
   abbreviations: include "outlines/abbreviations.typ",
@@ -22,7 +23,7 @@
   table-outline: include "outlines/table-outline.typ",
   code-outline: include "outlines/code-outline.typ",
   abstract: include "chapters/00_abstract.typ",
-  doc,
+  gratitude: include "chapters/00_expression-of-gratitude.typ",
 )
 
 // TODO: Remove example chapter before final submission

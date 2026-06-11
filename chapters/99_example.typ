@@ -45,7 +45,7 @@ Here is an Example on how to include an image which is also listed in the image 
       [Example Image],
       [This image is an example for displaying images],
     ),
-    image("../assets/hslu-logo.svg", width: 50%),
+    image("../assets/images/hslu-logo.svg", width: 50%),
   )
 ]
 
@@ -64,6 +64,15 @@ See @fig-code-rm for details. This is a code block:
     sudo rm -rf / --no-preserve-root
   ```,
 ) <fig-code-rm>
+
+= Cetz Diagram Example
+
+This is an example of a diagram created with Cetz. It is also listed in the figure outline.
+
+#figure(
+  caption: [Attention Diagram],
+  include "../assets/diagrams/attention.typ",
+) <fig-attention>
 
 = QR Code Link Example
 
