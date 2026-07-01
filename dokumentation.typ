@@ -35,6 +35,5 @@
 #include "chapters/04_methoden.typ"
 #include "chapters/05_realisierung.typ"
 #include "chapters/06_validation-und-evaluation.typ"
-#include "chapters/07_diskussion.typ"
-#include "chapters/08_ausblick.typ"
-#include "chapters/09_anhang.typ"
+#include "chapters/07_ausblick.typ"
+#include "chapters/08_anhang.typ"

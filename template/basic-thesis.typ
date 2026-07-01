@@ -26,7 +26,7 @@
   language: "de",
   doc,
 ) = {
-  set text(font: ("Times New Roman", "Libertinus Serif"), lang: language)
+  set text(font: ("Times New Roman", "Libertinus Serif"), size: 12pt, lang: language)
   set heading(numbering: none, outlined: false)
   show heading: set block(above: 2em, below: 1em)
 
@@ -50,8 +50,8 @@
 
   counter(page).update(1)
 
-  show link: underline
-  show ref: underline
+  show link: set text(fill: rgb("#0000EE"))
+  show ref: set text(fill: rgb("#0000EE"))
   show figure.caption: set text(fill: luma(100))
   show figure.caption: set block(inset: (y: 0.5em))
   show figure.where(kind: raw): set figure(supplement: "Code")
@@ -124,7 +124,7 @@
     pagebreak()
     it
   }
-  set par(leading: 1.3em)
+  set par(leading: 1.2em)
 
   doc
 }

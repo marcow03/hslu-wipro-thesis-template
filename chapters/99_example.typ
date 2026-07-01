@@ -1,6 +1,6 @@
 #import "../template/utils.typ": flex-caption, qr-code-link
 
-= Heading Example
+= Example
 
 #lorem(50)
 
@@ -16,7 +16,7 @@
 
 #lorem(50)
 
-= Table Example
+== Table Example
 
 Here is a simple table:
 
@@ -34,7 +34,7 @@ Here is a simple table:
   ),
 )
 
-= Image Example
+== Image Example
 
 Here is an Example on how to include an image which is also listed in the image outline.
 
@@ -49,12 +49,26 @@ Here is an Example on how to include an image which is also listed in the image 
   )
 ]
 
-= Source Example
+== Source Example
 
 This is based on @someExampleSource. Sources will automatically appear if they are cited. Add them to
 `bibliography.yaml`
 
-= Code Example
+== Link Example
+
+This is a normal link:
+
+#link("https://www.youtube.com/watch?v=xvFZjo5PgG0")
+
+This is the same link but hidden behind a QR code:
+
+#qr-code-link(
+  "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+)[
+  Check this out!
+]
+
+== Code Example
 
 See @fig-code-rm for details. This is a code block:
 
@@ -65,7 +79,7 @@ See @fig-code-rm for details. This is a code block:
   ```,
 ) <fig-code-rm>
 
-= Cetz Diagram Example
+== Cetz Diagram Example
 
 This is an example of a diagram created with Cetz. It is also listed in the figure outline.
 
@@ -74,10 +88,3 @@ This is an example of a diagram created with Cetz. It is also listed in the figu
   include "../assets/diagrams/attention.typ",
 ) <fig-attention>
 
-= QR Code Link Example
-
-#qr-code-link(
-  "https://www.youtube.com/watch?v=xvFZjo5PgG0",
-)[
-  Check this out!
-]

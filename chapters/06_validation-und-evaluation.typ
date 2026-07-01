@@ -5,3 +5,4 @@
 // und zweckmässig ist. Die Evaluation hingegen bewertet, wie gut das Ergebnis bestimmten Anforderungen
 // entspricht. Dies bildet die Grundlage für die Bewertung der wissenschaftlichen Aussagekraft und
 // Praxistauglichkeit der Arbeit.
+// Kapitel Diskussion kommt hier hin
