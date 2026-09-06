@@ -88,3 +88,10 @@ This is an example of a diagram created with Cetz. It is also listed in the figu
   include "../assets/diagrams/attention.typ",
 ) <fig-attention>
 
+
+== Drawio Diagram Example
+
+#figure(
+  caption: [Test Diagram],
+  image("../assets/diagrams/test.drawio.svg"),
+) <fig-test>
